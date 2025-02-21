@@ -6,7 +6,7 @@ import java.sql.Statement;
 public class DatabaseSetup {
     public static void createTables() {
         String sql =    "CREATE TABLE IF NOT EXISTS client ("
-                        + "     id INTEGER PRIMARY KEY AUTO_INCREMENT,"
+                        + "     id INTEGER PRIMARY KEY,"
                         + "     name VARCHAR(255),"
                         + "     balance double"
                         + ");";

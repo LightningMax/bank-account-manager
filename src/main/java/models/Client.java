@@ -33,5 +33,4 @@ public class Client {
             System.out.println("Could not set balance");
         }
     }
-
 }
