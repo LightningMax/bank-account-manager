@@ -3,11 +3,13 @@ package models;
 public class Client {
     private int id;
     private String name;
+    private String password;
     private double balance;
 
-    public Client(String name, double balance) {
-        this.name = name;
-        this.balance = balance;
+    public Client(String name, String password, double initial_balance) {
+        this.setName(name);
+        this.setPassword(password);
+        this.setBalance(initial_balance);
     };
 
     // Getters
@@ -23,9 +25,17 @@ public class Client {
         return balance;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     // Setters
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public void setBalance(double balance) {
