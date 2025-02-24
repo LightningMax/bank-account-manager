@@ -12,6 +12,8 @@ public class Client {
         this.setBalance(initial_balance);
     };
 
+    public Client() {};
+
     // Getters
     public int getId() {
         return id;
