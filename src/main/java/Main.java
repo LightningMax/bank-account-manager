@@ -1,23 +1,13 @@
-import models.Client;
+import controllers.ClientController;
 import models.ClientDAO;
-import views.ClientView;
-
-import java.sql.SQLException;
+import views.CLIView;
 
 public class Main {
     public static void main(String[] args) {
-
-        Client client = new Client("Joao", 450.0);
         ClientDAO clientDAO = new ClientDAO();
-        ClientView clientView = new ClientView();
+        ClientController clientController = new ClientController(clientDAO);
+        CLIView cli = new CLIView(clientController);
 
-//        try {
-//            clientDAO.addClient(client);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-
-        clientView.displayClient(client);
-
+        cli.displayMainMenu();
     }
 }

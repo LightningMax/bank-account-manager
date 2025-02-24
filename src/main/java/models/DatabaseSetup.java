@@ -8,6 +8,7 @@ public class DatabaseSetup {
         String sql =    "CREATE TABLE IF NOT EXISTS client ("
                         + "     id INTEGER PRIMARY KEY,"
                         + "     name VARCHAR(255),"
+                        + "     password VARCHAR(255),"
                         + "     balance double"
                         + ");";
 
