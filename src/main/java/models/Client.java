@@ -5,7 +5,10 @@ public class Client {
     private String name;
     private double balance;
 
-    Client() {};
+    public Client(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    };
 
     // Getters
     public int getId() {
