@@ -12,10 +12,11 @@ public class ClientDAO {
     }
 
     public void addClient(Client client) throws SQLException {
-        String sql = "INSERT INTO client (name, balance) VALUES (?, ?)";
+        String sql = "INSERT INTO client (name, password ,balance) VALUES (?, ?, ?)";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, client.getName());
-        stmt.setDouble(2, client.getBalance());
+        stmt.setString(2, client.getPassword());
+        stmt.setDouble(3, client.getBalance());
         stmt.executeUpdate();
     }
 }
