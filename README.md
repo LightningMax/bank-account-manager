@@ -2,6 +2,8 @@
 
 A simple command-line application for managing bank accounts using Java and SQLite.
 
+Personal project with the purpose for learning how to connect a database with an application and the MVC pattern.
+
 ## Features
 - Create and manage client bank accounts.
 - Store data in an SQLite database.
@@ -22,7 +24,6 @@ cd bank-account-manager
 
 ## Running the Application
 
-### Using Java Directly
 1. Compile the project:
    ```sh
    mvn clean package
