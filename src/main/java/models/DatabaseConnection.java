@@ -17,9 +17,7 @@ public class DatabaseConnection {
         return conn;
     }
 
-    public static String getUrl() {
-        return url;
-    }
+    public static String getUrl() { return url; }
 
     public static void main(String[] args) {
         connect();
