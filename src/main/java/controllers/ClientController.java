@@ -12,8 +12,8 @@ public class ClientController {
         this.clientDAO = clientDAO;
     };
 
-    public void createAccount(String name, String password, double initialBalance) {
-        Client client = new Client(name, password, initialBalance);
+    public void createAccount(String name, String password) {
+        Client client = new Client(name, password);
 
         try {
             clientDAO.addClient(client);

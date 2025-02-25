@@ -73,15 +73,12 @@ public class CLIView {
     public void displayCreateAccount() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Enter your name: ");
+        System.out.print("Enter your name: ");
         String name = scanner.nextLine();
 
-        System.out.println("Enter your password: ");
+        System.out.print("Enter your password: ");
         String password = scanner.nextLine();
 
-        System.out.println("Enter your initial balance: ");
-        double initialBalance = scanner.nextDouble();
-
-        clientController.createAccount(name, password, initialBalance);
+        clientController.createAccount(name, password);
     }
 }

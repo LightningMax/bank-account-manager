@@ -6,10 +6,9 @@ public class Client {
     private String password;
     private double balance;
 
-    public Client(String name, String password, double initial_balance) {
+    public Client(String name, String password) {
         this.setName(name);
         this.setPassword(password);
-        this.setBalance(initial_balance);
     };
 
     public Client() {};
@@ -38,14 +37,5 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public void setBalance(double balance) {
-        if (balance > 0) {
-            this.balance = balance;
-        }
-        else {
-            System.out.println("Could not set balance");
-        }
     }
 }
