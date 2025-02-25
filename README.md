@@ -19,11 +19,6 @@ git clone https://github.com/LightningMax/bank-account-manager.git
 cd bank-account-manager
 ```
 
-### Build the Project
-Run the following command to download dependencies and compile the project:
-```sh
-mvn clean install
-```
 
 ## Running the Application
 
