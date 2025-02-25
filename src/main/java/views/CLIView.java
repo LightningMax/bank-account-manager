@@ -5,13 +5,12 @@ import controllers.ClientController;
 import java.util.Scanner;
 
 enum Command {
-    EXIT, LOGIN, LOGOUT , CREATE_ACCOUNT, UNKNOWN;
+    EXIT, LOGIN, CREATE_ACCOUNT, UNKNOWN;
     public static Command fromInt(int value) {
         switch (value) {
             case 0: return EXIT;
             case 1: return LOGIN;
-            case 2: return LOGOUT;
-            case 3: return CREATE_ACCOUNT;
+            case 2: return CREATE_ACCOUNT;
             default: return UNKNOWN;
         }
     }
@@ -32,18 +31,17 @@ public class CLIView {
 
         while (true) {
 
-            System.out.println("   ____ _ _            _      _ ");
-            System.out.println("  / ___| (_) ___ _ __ | |_   / \\   _ __  _ __ ");
-            System.out.println(" | |   | | |/ _ \\ '_ \\| __| / _ \\ | '_ \\| '_ \\ ");
-            System.out.println(" | |___| | |  __/ | | | |_ / ___ \\| |_) | |_) | ");
-            System.out.println("  \\____|_|_|\\___|_| |_|\\__/_/   \\_\\ .__/| .__/ ");
+            System.out.println("  ____              _        _                ");
+            System.out.println(" | __ )  __ _ _ __ | | __   / \\   _ __  _ __  ");
+            System.out.println(" |  _ \\ / _` | '_ \\| |/ /  / _ \\ | '_ \\| '_ \\ ");
+            System.out.println(" | |_) | (_| | | | |   <  / ___ \\| |_) | |_) |");
+            System.out.println(" |____/ \\__,_|_| |_|_|\\_\\/_/   \\_\\ .__/| .__/ ");
             System.out.println("                                 |_|   |_|    ");
             System.out.println("====================================================");
             System.out.println("1 - Login");
-            System.out.println("2 - Logout");
             System.out.println("2 - Create Account");
             System.out.println("0 - Exit");
-            System.out.println("> ");
+            System.out.print("> ");
 
             choice = Integer.parseInt(scanner.nextLine());
             Command command = Command.fromInt(choice);
