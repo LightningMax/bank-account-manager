@@ -6,12 +6,19 @@ public class Client {
     private String password;
     private double balance;
 
+    public Client(String name, String password, double balance) {
+        this.setName(name);
+        this.setPassword(password);
+        this.setBalance(balance);
+    }
+
     public Client(String name, String password) {
         this.setName(name);
         this.setPassword(password);
-    };
+        this.setBalance(0);
+    }
 
-    public Client() {};
+    public Client() {}
 
     // Getters
     public int getId() {
@@ -37,5 +44,9 @@ public class Client {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setBalance(double balance) {
+        if (balance >= 0) { this.balance = balance; }
     }
 }

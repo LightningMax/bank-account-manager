@@ -17,10 +17,23 @@ public class ClientController {
 
         try {
             clientDAO.addClient(client);
+            System.out.println("Client created successfully!");
         } catch (SQLException e) {
-            System.out.println("Account creation failed " + e.getMessage());
+            System.out.println("Client creation failed " + e.getMessage());
         }
-
-        System.out.println("Account created successfully!");
     }
+
+//    public void login(String name, String password) {
+//        try {
+//            Client client = clientDAO.getUserByName(name);
+//
+//            if (client == null) {
+//                System.out.println("User not found");
+//                return;
+//            }
+//            System.out.println("User found with success!");
+//        } catch (SQLException e) {
+//            System.out.println("Error fetching user " + e.getMessage());
+//        }
+//    }
 }
