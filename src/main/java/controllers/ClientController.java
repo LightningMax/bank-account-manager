@@ -23,17 +23,25 @@ public class ClientController {
         }
     }
 
-//    public void login(String name, String password) {
-//        try {
-//            Client client = clientDAO.getUserByName(name);
-//
-//            if (client == null) {
-//                System.out.println("User not found");
-//                return;
-//            }
-//            System.out.println("User found with success!");
-//        } catch (SQLException e) {
-//            System.out.println("Error fetching user " + e.getMessage());
-//        }
-//    }
+    public Client login(String name, String password) {
+        try {
+            Client client = clientDAO.getUserByName(name);
+
+            if (client == null) {
+                System.out.println("User not found");
+                return null;
+            }
+
+            if (!password.equals(client.getPassword())) {
+                System.out.println("wrong password");
+                return null;
+            }
+            System.out.println("login successful");
+            return client;
+
+        } catch (SQLException e) {
+            System.out.println("Error fetching user " + e.getMessage());
+            return null;
+        }
+    }
 }

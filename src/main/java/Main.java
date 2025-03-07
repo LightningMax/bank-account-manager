@@ -13,6 +13,6 @@ public class Main {
         ClientController clientController = new ClientController(clientDAO);
 
         CLIView cli = new CLIView(clientController);
-        cli.displayMainMenu();
+        cli.displayLoginMenu();
     }
 }
