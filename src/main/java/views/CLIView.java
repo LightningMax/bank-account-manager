@@ -41,8 +41,6 @@ public class CLIView {
         int choice = -1;
 
         while (true) {
-
-            ascii_art();
             System.out.println("1 - Login");
             System.out.println("2 - Create Account");
             System.out.println("0 - Exit");
@@ -72,9 +70,32 @@ public class CLIView {
     }
 
     public void displayMainMenu(Client client) {
-        ascii_art();
-        System.out.println("Hello " + client.getName());
-        System.out.println("Your balance: " + client.getBalance());
+
+        int choice = -1;
+
+        while (choice != 0) {
+
+            System.out.println("Hello " + client.getName());
+            System.out.println("1: Check your balance");
+            System.out.println("2: Do a deposit");
+            System.out.println("3: Do a withdraw");
+            System.out.println("0: exit");
+            System.out.print("> ");
+
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1: {
+                    System.out.println("Your balance: " + client.getBalance() + " €");
+                    break;
+                }
+                case 2: break;
+                case 3: break;
+                case 0: break;
+                default:
+                    System.out.println("invalid command");
+            }
+        }
     }
 
     public void displayCreateAccount() {
@@ -90,20 +111,19 @@ public class CLIView {
     public void displayLogin() {
         Client client = null;
 
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        while (client == null) {
+            System.out.print("Enter your name: ");
+            String name = scanner.nextLine();
 
-        System.out.print("Enter your password: ");
-        String password = scanner.nextLine();
+            System.out.print("Enter your password: ");
+            String password = scanner.nextLine();
 
+            client = clientController.login(name, password);
 
-        client = clientController.login(name, password);
-
-        if (client == null) {
-            System.out.println("Login failed");
-            return;
+            if (client == null) {
+                System.out.println("Login failed");
+            }
         }
-
         displayMainMenu(client);
     }
 }
